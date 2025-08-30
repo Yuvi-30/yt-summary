@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | AI Summary Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <div class="grid-pattern"></div>
+    <div id="particles-js"></div>
+
+    <nav class="cyber-nav">
+        <div class="nav-container">
+            <div class="nav-logo">AI Summary Generator</div>
+
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="content-wrapper" style="max-width: 400px;">
+            <h2 style="font-size: 2rem; text-align: center; margin-bottom: 2rem;" class="typing-effect">Create Account</h2>
+            
+            <form method="post" style="display: flex; flex-direction: column; gap: 1rem;">
+                {% csrf_token %}
+                {% if error_message %}
+                <div class="cyber-input">
+                    {{ error_message }}
+                </div>
+                {% endif %}
+                <div>
+                    <input type="text" name="username" class="cyber-input" placeholder="Username">
+                </div>
+                <div>
+                    <input type="email" name="email" class="cyber-input" placeholder="Email">
+                </div>
+                <div>
+                    <input type="password" name="password1" class="cyber-input" placeholder="Password">
+                </div>
+                <div>
+                    <input type="password" name="password2" class="cyber-input" placeholder="Confirm Password">
+                </div>
+                <button type="submit" class="cyber-button" style="width: 100%; margin-top: 1rem;">
+                    Sign Up
+                </button>
+            </form>
+
+            <p style="text-align: center; margin-top: 2rem; color: #888;">
+                Already have an account? 
+                <a href="/login" style="color: var(--primary); text-decoration: none;">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>

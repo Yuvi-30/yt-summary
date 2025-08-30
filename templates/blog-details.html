@@ -1,0 +1,49 @@
+{% load static %}
+{% load markdownify %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }} | AI Summary Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <div class="grid-pattern"></div>
+    <div id="particles-js"></div>
+
+    <nav class="cyber-nav">
+        <div class="nav-container">
+            <div class="nav-logo">AI Summary Generator</div>
+            <div class="nav-links">
+                <a href="/" class="cyber-button">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="content-wrapper" style="max-width: 800px;">
+            <a href="/blog_list" class="cyber-button" style="margin-bottom: 2rem; display: inline-block;">← Back to Blogs</a>
+            
+            <h1 style="font-size: 2.5rem; margin-bottom: 2rem;">{{ blog_article_detail.youtube_title }}</h1>
+            
+            <div style="color: #888; margin-bottom: 1rem;">
+                Published on {{ blog_article_detail.created_at|date:"F j, Y" }}
+            </div>
+            
+            <div style="color: #888; margin-bottom: 1rem;">
+                <a href="{{ blog_article_detail.youtube_link }}" target="_blank">View Original Video</a>
+            </div>
+            
+            <div class="blog-content" style="line-height: 1.8; margin-top: 2rem;">
+                {{ blog_article_detail.generated_content|markdownify|linebreaksbr }}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{% static 'main.js' %}"></script>
+</body>
+</html>

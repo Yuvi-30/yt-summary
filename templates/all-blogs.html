@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog List | AI Summary Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<body>
+
+    <div class="grid-pattern"></div>
+    <div id="particles-js"></div>
+
+    <nav class="cyber-nav">
+        <div class="nav-container">
+            <div class="nav-logo">AI Summary Generator</div>
+            <div class="nav-links">
+                <a href="/" class="cyber-button">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="content-wrapper" style="max-width: 1000px;">
+            <h2 style="font-size: 2rem; text-align: center; margin-bottom: 3rem;" class="typing-effect">Generated Blogs
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                {% if blog_articles %}
+                {% for blog in blog_articles %}
+                <div style="border: 1px solid #ccc; padding: 20px; margin: 10px; border-radius: 8px;">
+                    <h3>{{ blog.youtube_title }}</h3>
+                    <br>
+                    <p><strong>Created:</strong> {{ blog.created_at|date:"M d, Y " }}</p>
+                    <p><strong>YouTube Link:</strong> <a href="{{ blog.youtube_link }}" target="_blank">View Video</a>
+                    </p>
+                    <br>
+                    <a href="{% url 'blog_details' blog.id %}" class="cyber-button">Read Full Blog</a>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>No blogs found.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{% static 'main.js' %}"></script>
+</body>
+
+</html>
