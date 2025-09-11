@@ -1,3 +1,11 @@
+<img width="33%" height="862" alt="Screenshot 2025-09-11 185638" src="https://github.com/user-attachments/assets/3c8163ad-b0e9-46f3-9377-a4a8b5b50947" />
+<img width="33%" height="891" alt="Screenshot 2025-09-11 185656" src="https://github.com/user-attachments/assets/aa443399-03ed-4d75-9d8e-c2a6f3aab6f6" />
+<img width="33%" height="877" alt="Screenshot 2025-09-11 185816" src="https://github.com/user-attachments/assets/1f80ade3-d900-48e8-b6f0-ea9a7da95b1f" />
+<br>
+<img width="33%" height="882" alt="Screenshot 2025-09-11 185835" src="https://github.com/user-attachments/assets/70fa0798-ac81-4b24-8c53-54466898f355" />
+<img width="33%" height="878" alt="Screenshot 2025-09-11 185850" src="https://github.com/user-attachments/assets/9ff6fc90-3fe2-49ed-9b86-ae95eba2eb5e" />
+
+
 # 🎥 AI YouTube Summary Generator
 
 A powerful web application that converts YouTube videos into comprehensive, AI-generated blog articles using advanced transcription and natural language processing.
